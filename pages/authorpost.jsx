@@ -29,8 +29,8 @@ const AuthorPost = ({ post, author }) => {
 
 AuthorPost.getInitialProps = async (context) => {
     const postId = context.query.id
-    const response = await Axios.get(`http://jsonplaceholder.typicode.com/posts?id=${postId}`)
-    const result = await Axios.get(`http://jsonplaceholder.typicode.com/users?id=${response.data[0].userId}`)
+    const response = await Axios.get(`https://jsonplaceholder.typicode.com/posts?id=${postId}`)
+    const result = await Axios.get(`https://jsonplaceholder.typicode.com/users?id=${response.data[0].userId}`)
     return {
         post: response.data[0],
         author: result.data[0]
